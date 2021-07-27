@@ -1,6 +1,7 @@
 import Server from "./class/server";
 import express from "express";
 import cors from 'cors';
+import mysqlconection from './bin/mysqlConection'
 
 //Instanciando el servidor Web
 const server = new Server();
@@ -16,3 +17,7 @@ server.app.use(express.json()); //express.json()
 
 //cors
 server.app.use(cors());
+
+//Conexión MySQL
+
+mysqlconection;
