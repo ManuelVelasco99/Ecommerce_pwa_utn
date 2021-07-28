@@ -1,7 +1,9 @@
 import Server from "./class/server";
 import express from "express";
 import cors from 'cors';
-import mysqlconection from './bin/mysqlConection'
+import mysqlconection from './bin/mysqlConection';
+import userRoutes from './routes/user'
+
 
 //Instanciando el servidor Web
 const server = new Server();
@@ -21,3 +23,7 @@ server.app.use(cors());
 //Conexión MySQL
 
 mysqlconection;
+
+//Rutas de la app
+
+server.app.use('/users', userRoutes);
