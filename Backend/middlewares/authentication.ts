@@ -19,8 +19,5 @@ import Token from "../class/token";
         });    
     };
 
-    const admin = (req:any, res:Response, next:NextFunction)=>{
-        console.log(req.user.admin);
-    };
- export default verifyToken;
+export default verifyToken;
 

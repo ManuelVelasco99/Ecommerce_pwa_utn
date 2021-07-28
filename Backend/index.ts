@@ -3,6 +3,7 @@ import express from "express";
 import cors from 'cors';
 import mysqlconection from './bin/mysqlConection';
 import userRoutes from './routes/user'
+import adminRoutes from './routes/admin'
 
 
 //Instanciando el servidor Web
@@ -27,3 +28,4 @@ mysqlconection;
 //Rutas de la app
 
 server.app.use('/user', userRoutes);
+server.app.use('/admin', adminRoutes);
