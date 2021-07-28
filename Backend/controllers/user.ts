@@ -44,6 +44,14 @@ export = {
                 mensaje: error
             }); 
         }  
+    },
+
+    profileUser: async(req:any, res:Response)=>{
+        const userToken : IuserToken = req.user;
+        res.json({
+            estado:'success',
+            mensaje: `Hola ${userToken.nombre} ${userToken.apellido}. Estas logueado como ${userToken.id_user}`
+        })
     }
 
 };
