@@ -1,5 +1,7 @@
 import { Response, Request } from "express";
 import query from "../bin/mysqlConection";
+import IuserRegister from "../interfaces/user";
+import bcrypt from 'bcrypt';
 
 export = {
 
@@ -27,7 +29,7 @@ export = {
                 pass:req.body.password
             };
             const userSelected : Array<any> = await query("SELECT * FROM USER WHERE email=?",[datosLogin.email]);
-            if (userSelected.length == 1 && datosLogin.pass==userSelected[0].password){               
+            if (userSelected.length == 1 && bcrypt.compareSync(datosLogin.pass,userSelected[0].password)){ 
                 res.json({estado:'success',userSelected:userSelected[0]});              
             };                
             res.json({estado:'success',mensaje:'usuario o constraseña incorrecta'});
@@ -38,5 +40,19 @@ export = {
                 mensaje: error
             }); 
         }  
+    },
+
+    registerUser: async(req:Request, res:Response)=>{
+        try{
+            const userRegister:IuserRegister = req.body;
+            userRegister.password = bcrypt.hashSync(userRegister.password,10);
+            const insertResult = await query('INSERT INTO USER SET ?',[userRegister]);
+
+            res.json(insertResult);
+
+        }
+        catch(error){
+            res.json({estado:'error',error:error})
+        }
     }
 };

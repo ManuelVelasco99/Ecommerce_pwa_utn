@@ -26,4 +26,4 @@ mysqlconection;
 
 //Rutas de la app
 
-server.app.use('/users', userRoutes);
+server.app.use('/user', userRoutes);
