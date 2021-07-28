@@ -1,4 +1,4 @@
-interface IuserRegister{
+export default interface IuserRegister{
     email:string,
     password:string,
     fecha_nacimiento:Date,
@@ -6,6 +6,7 @@ interface IuserRegister{
     nombre:string,
     apellido:string,
     telefono:string
-}
+};
 
-export default IuserRegister
+
+
