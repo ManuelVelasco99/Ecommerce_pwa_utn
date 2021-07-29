@@ -15,6 +15,8 @@ adminRoutes.post('/categories/hide',verifyToken,verifyAdmin,adminCategoriasContr
 
 adminRoutes.get('/products',verifyToken,verifyAdmin,adminProductosController.showProducts);
 
+adminRoutes.get('/proudcts/image',verifyToken,verifyAdmin,adminProductosController.getProductImage);
+
 adminRoutes.post('/products/create',verifyToken,verifyAdmin,adminProductosController.createProducts);
 
 export default adminRoutes;

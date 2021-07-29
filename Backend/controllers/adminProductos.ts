@@ -1,6 +1,11 @@
 import { Request,Response } from "express";
 import query from "../bin/mysqlConection";
+import { IfileUpload } from "../interfaces/file-upload";
 import IproductCreate from "../interfaces/productCreate";
+import FileSystem from "../class/file_system";
+
+const filesystem = new FileSystem();
+
 
 async function getProducts(){
     await query(`drop temporary table if exists product_price`);
@@ -28,11 +33,36 @@ export={
         }
     },
 
-    createProducts:async(req:Request, res:Response) =>{
-        try
-        {const precioProducto = req.body.precio;
+    createProducts:async(req:any, res:Response) =>{
+        try{
+        const precioProducto = req.body.precio;
+        if(req.files === null){
+            return res.status(400).json({
+                estado:"error",
+                mensaje: "No se incluyó imagen"
+            })
+        };    
+        let imagen:IfileUpload = req.files.image;
+        if(!imagen){
+            return res.status(400).json({
+                estado:"error",
+                mensaje: "No se envio imagen"
+            })
+        };
+
+        if(!imagen.mimetype.includes('image')){ //Valida que el tipo de archivo sea una imagen
+            return res.status(400).json({
+                estado:"error",
+                mensaje: "El file no es una imagen"
+            })
+        }
+
         delete req.body.precio;  
-        const productCreate : IproductCreate = req.body;
+        const productCreate : IproductCreate = req.body;     
+        const nombreImagenTemp = await filesystem.guardarImagenTemporal(imagen);
+        filesystem.ImagenDeTempHaciaPost(nombreImagenTemp);
+        productCreate.imagen = nombreImagenTemp;
+        
         await query("start transaction");
         const insertProduct:any = await query('INSERT INTO PRODUCT SET ?',[productCreate])
         console.log(insertProduct);
@@ -44,7 +74,8 @@ export={
         await query("commit");      
         res.json({
             estado:'success',product:insertProduct,
-        })}
+        })
+        }
         catch(error){
             await query("rollback");
             res.json({
@@ -52,5 +83,12 @@ export={
                 error:error
             })
         }        
+    },
+
+    getProductImage:(req:any, res:Response) =>{//devuelve la imagen con el nombre ingresado en ?image='nombreImagen'      
+        const imgUrl =  filesystem.getImageUrl(req.query.image);
+        console.log(imgUrl);
+        res.sendFile(imgUrl);
     }
+
 }
