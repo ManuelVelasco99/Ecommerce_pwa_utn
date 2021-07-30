@@ -17,7 +17,12 @@ let variables_entorno = {
     DB_USER: process.env.DB_USER || 'root',
     DB_PASS: process.env.DB_PASS || '',
     DB_NAME: process.env.DB_NAME || `ecommerce_pwa_utn`,
-    DB_PORT: process.env.DB_PORT || 3306
+    DB_PORT: process.env.DB_PORT || 3306,
+
+    //NodeMailer
+    NM_USER: process.env.NM_USER,
+    NM_PASS: process.env.NM_PASS,
+
 
 }
 

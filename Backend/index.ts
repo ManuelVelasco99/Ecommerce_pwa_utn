@@ -7,6 +7,7 @@ import adminRoutes from './routes/admin';
 import FileSystem from "./class/file_system";
 import bodyParser from "body-parser";
 import fileUpload from 'express-fileupload';
+import variables_entorno from "./config";
 
 
 //Instanciando el servidor Web

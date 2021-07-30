@@ -5,7 +5,8 @@ export default interface IuserRegister{
     sexo:string,
     nombre:string,
     apellido:string,
-    telefono:string
+    telefono:string,
+    id_validate:string
 };
 
 

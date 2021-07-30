@@ -9,6 +9,8 @@ userRoutes.post('/login',userController.loginUser);
 
 userRoutes.post('/register', userController.registerUser);
 
-userRoutes.get('/profile',verifyToken,verifyAdmin, userController.profileUser)
+userRoutes.get('/profile',verifyToken,verifyAdmin, userController.profileUser);
+
+userRoutes.get('/validate',userController.validateUser);
 
 export default userRoutes;
