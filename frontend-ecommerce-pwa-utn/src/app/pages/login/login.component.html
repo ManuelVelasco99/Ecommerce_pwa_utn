@@ -1,0 +1,23 @@
+<p>login works!</p>
+<br>
+<form class="body" [formGroup]="this.formLogin">
+    <div class="example-form" >
+        <h2 class="example-full-width logintext">Login</h2>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput type="email" placeholder="E. xPizza" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password" placeholder="*********" >
+          </mat-form-field>
+
+         <div class="loginButton">
+             <button c mat-raised-button  color="primary" (click)="ejecutarLogin()">Ingresar</button>
+
+         </div>
+   
+        </div>
+
+    </form>  

@@ -33,6 +33,7 @@ export = {
                 email:req.body.email,
                 pass:req.body.password
             };
+            console.log(datosLogin);
             const userSelected : Array<any> = await query("SELECT * FROM USER WHERE email=?",[datosLogin.email]);
             if (userSelected.length == 1 && bcrypt.compareSync(datosLogin.pass,userSelected[0].password)){ 
                 const userToken : IuserToken = userSelected[0];

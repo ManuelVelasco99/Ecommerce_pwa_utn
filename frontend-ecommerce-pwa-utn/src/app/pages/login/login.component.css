@@ -1,0 +1,25 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .body{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+.logintext {
+    display: flex;
+    justify-content: center;
+}
+
+.loginButton {
+    display: flex;
+    justify-content: center;
+}
