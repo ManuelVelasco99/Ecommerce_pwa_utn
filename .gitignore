@@ -3,3 +3,9 @@ Backend/node_modules
 Backend/env
 
 Backend/dist
+
+frontend-ecommerce-pwa-utn/node_modules
+
+frontend-ecommerce-pwa-utn/dist
+frontend-ecommerce-pwa-utn/tmp
+frontend-ecommerce-pwa-utn/out-tsc
