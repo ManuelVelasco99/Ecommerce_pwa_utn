@@ -3,6 +3,10 @@
 <form class="body" [formGroup]="this.formLogin">
     <div class="example-form" >
         <h2 class="example-full-width logintext">Login</h2>
+        <div class="backgroundRed" *ngIf="showE">
+          <p>Usuario o contraseña incorrectos. {{showE}}</p>
+
+        </div>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Email</mat-label>
           <input formControlName="email" matInput type="email" placeholder="E. xPizza" >
