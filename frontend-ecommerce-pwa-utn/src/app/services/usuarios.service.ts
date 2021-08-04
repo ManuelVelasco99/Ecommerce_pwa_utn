@@ -13,7 +13,7 @@ export class UsuariosService {
   constructor(private http:HttpClient) { }
 
   rutaApi:string = environment.rutaBackend;
-  time_out = environment.timeOutBakend
+  time_out = environment.timeOutBakend;
 
   login(loginData:{}):any{
     console.log(loginData)

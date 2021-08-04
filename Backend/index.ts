@@ -8,6 +8,7 @@ import FileSystem from "./class/file_system";
 import bodyParser from "body-parser";
 import fileUpload from 'express-fileupload';
 import variables_entorno from "./config";
+import homeRoutes from "./routes/home";
 
 
 //Instanciando el servidor Web
@@ -38,3 +39,4 @@ mysqlconection;
 
 server.app.use('/user', userRoutes);
 server.app.use('/admin', adminRoutes);
+server.app.use('/home', homeRoutes);

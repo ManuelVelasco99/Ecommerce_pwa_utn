@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
+//material
+import {MatListModule} from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +14,10 @@ import { HomeComponent } from './home.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+
+    //material
+    MatListModule
   ]
 })
 export class HomeModule { }
