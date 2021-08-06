@@ -1,4 +1,39 @@
 .divCategorias {
     width: 25vh;
     padding-left: 20px;
+    float: left;
+    min-height: 5000px;
+}
+
+.divProductos{
+    width:max-content;
+    float: left;
+}
+
+.block{
+    display: block;
+}
+
+.mycard {
+    
+    max-width: 250px;
+    min-width: 100px;
+    margin: 10px;
+    /* height: 20%; */
+}
+.grid{
+    display: grid;
+    grid-template-columns: 30vh auto;
+}
+
+.gridProductos{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    justify-items: center;
+   
+}
+
+.img{
+    width: 280px;
+    height: 280px;
 }

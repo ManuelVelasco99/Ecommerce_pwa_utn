@@ -6,6 +6,9 @@ import { HomeComponent } from './home.component';
 
 //material
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -17,7 +20,9 @@ import {MatListModule} from '@angular/material/list';
     HomeRoutingModule,
 
     //material
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class HomeModule { }

@@ -14,5 +14,9 @@ export class HomeService {
   getCategories():any{
     return this.http.get(`${this.rutaApi}/home/categories`);
   }
+
+  getProducts():any{
+    return this.http.get(`${this.rutaApi}/home/products`);
+  }
 }
 

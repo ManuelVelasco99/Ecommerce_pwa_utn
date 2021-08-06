@@ -1,14 +1,45 @@
 <p>home works!</p>
-<div class="divCategorias">
+
+
+
+  <div class="grid">
+
+    <div class="">
     
-    <mat-selection-list #shoes [multiple]="false">
-      <mat-list-item role="listitem">Categorias</mat-list-item>
+      <mat-selection-list #shoes [multiple]="false">
+        <mat-list-item role="listitem" style="font-weight: bold;">Categorias</mat-list-item>
         <mat-list-option *ngFor="let shoe of cate" [value]="shoe">
-            {{shoe}}
+          {{shoe}}
         </mat-list-option>
-    </mat-selection-list>
-</div>
+      </mat-selection-list>
+    </div>
+    <div class="gridProductos">
+      <mat-card *ngFor="let produ of prod" class="example-card mycard">
+        <img mat-card-image class="img" [src]= "'http://localhost:3000/admin/proudcts/image?image=' + produ.imagen" alt="Photo of a Shiba Inu">
+        <mat-card-header>
   
+          <mat-card-title>{{produ.nombre}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            ${{produ.precio}}.
+          </p>
+        </mat-card-content>
+        <mat-card-actions style="display:flex; justify-items: center; justify-content: center;">
+          <button mat-button>Comprar</button>
+          <button mat-button>Agregar al carrito</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+  
+  
+
+
+
+
+
   <p>
     Option selected: {{shoes.selectedOptions.selected[0]?.value}}
   </p>
