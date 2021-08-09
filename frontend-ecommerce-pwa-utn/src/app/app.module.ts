@@ -6,12 +6,23 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+/*
+import { NavbarComponent } from './components/navbar/navbar.component';
+*/
+
+import { NavbarModule } from './components/navbar/navbar.module';
+
+//Material
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
 @NgModule({
   declarations: [
     AppComponent
+    
+    
 
 
   ],
@@ -19,7 +30,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NavbarModule
+    
+    
+    
+    
 
   ],
   providers: [
