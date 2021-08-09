@@ -24,4 +24,8 @@ export class NavbarComponent implements OnInit {
   irHome(){
     this.router.navigate(['/home'])
   }
+
+  irCategorias(){
+    this.router.navigate(['/admin/categorias'])
+  }
 }

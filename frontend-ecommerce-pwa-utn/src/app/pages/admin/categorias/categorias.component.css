@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .edit{
+      color: red;
+      cursor: pointer;
+  }

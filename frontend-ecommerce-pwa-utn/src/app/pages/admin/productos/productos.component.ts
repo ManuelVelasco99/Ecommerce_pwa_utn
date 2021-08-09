@@ -25,15 +25,20 @@ export class ProductosComponent implements OnInit {
   }
 
 
-  edit(){
-    console.log('editaste')
+  edit(id:any){
+    console.log('editaste',id)
   }
+
+  delete(id:any){
+    console.log('borraste',id)
+  }
+
   ELEMENT_DATA!: any[];
   dataSource = new MatTableDataSource<any>(this.ELEMENT_DATA);
 
  
 
-  displayedColumns: string[] = ['id','nombre', 'nombre_categoria', 'imagen', 'price','stock','edit'];
+  displayedColumns: string[] = ['id','nombre', 'nombre_categoria', 'imagen', 'price','stock','edit','delete'];
 
   /*descripcion: "sirve para ..."
   id_product: 36
