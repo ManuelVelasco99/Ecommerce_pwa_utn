@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/services/home.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+
 
 
 
@@ -12,7 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class CategoriasComponent implements OnInit {
 
-  constructor(private categoriesService:HomeService) { }
+  constructor(private categoriesService:HomeService,private router:Router) { }
 
   ngOnInit(): void {
     this.categoriesService.getCategories().subscribe((databackend:any)=>{
@@ -24,6 +26,7 @@ export class CategoriasComponent implements OnInit {
 
   edit(id:any){
     console.log('editaste',id)
+    this.router.navigate(['/admin/categorias/editar'], { queryParams: { id: id } })
   }
 
   delete(id:any){

@@ -16,6 +16,7 @@ import { NavbarModule } from './components/navbar/navbar.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 
+import { TokenInterceptor } from './services/token-interceptor.service';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import {MatIconModule} from '@angular/material/icon';
 
   ],
   providers: [
-    //{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true},
 
   ],
   bootstrap: [AppComponent]

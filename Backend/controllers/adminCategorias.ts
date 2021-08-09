@@ -15,6 +15,42 @@ export={
         }
     },
 
+    getCategory :async(req:Request, res:Response) =>{
+        try{
+            const id = req.query.id;
+            const categoria = await query('SELECT * FROM CATEGORY WHERE id_category = ?',[id]);
+            res.json({
+                estado:'success',
+                category:categoria[0]
+            })
+        }
+        catch(error){
+            res.json({
+                estado:'error',
+                error:error
+            })
+        }
+    },
+
+    updateCategory :async(req:Request, res:Response) =>{
+        try{
+            const cat = req.body;
+            const categoria = await query('UPDATE category SET nombre = ? WHERE (id_category = ?)',[cat.nombre,cat.id]);
+            ;
+            res.json({
+                estado:'success',
+                console:categoria
+                //category:categoria[0]
+            })
+        }
+        catch(error){
+            res.json({
+                estado:'error',
+                error:error
+            })
+        }
+    },
+
     createCategory:async(req:any, res:Response) =>{
         try{
             const category = {nombre:req.body.nombre};
@@ -62,7 +98,9 @@ export={
                     error:error
             })
         }
-    }
+    },
+
+    
 
 };
 

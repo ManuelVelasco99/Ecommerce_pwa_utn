@@ -6,6 +6,8 @@ import adminProductosController from '../controllers/adminProductos'
 const adminRoutes = Router();
 
 adminRoutes.get('/categories',verifyToken,verifyAdmin,adminCategoriasController.showCategories);
+adminRoutes.get('/category',verifyToken,verifyAdmin,adminCategoriasController.getCategory);
+adminRoutes.post('/category',verifyToken,verifyAdmin,adminCategoriasController.updateCategory);
 
 adminRoutes.post('/categories/create',verifyToken,verifyAdmin,adminCategoriasController.createCategory);
 

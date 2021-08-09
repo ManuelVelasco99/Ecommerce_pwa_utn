@@ -1,0 +1,17 @@
+<p>editar works!</p>
+<button mat-raised-button (click)='irCategorias()'>Regresar</button>
+<h2>Editar categoria</h2>
+<form class="example-form" style="margin-left: 20px;" [formGroup]="this.formCategory">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Id</mat-label>
+      <input  formControlName="id" matInput placeholder="Ex. Pizza"  readonly>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="nombre" matInput   >
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" (click)='editarCategoria()'>Editar</button>
+</form>

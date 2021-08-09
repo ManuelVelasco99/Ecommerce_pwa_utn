@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditarCategoriaModule } from 'src/app/pages/admin/categorias/editar/editar.module';
 import { LoginModule } from 'src/app/pages/login/login.module';
 import { CategoriasModule } from './pages/admin/categorias/categorias.module';
+
 import { ProductosModule } from './pages/admin/productos/productos.module';
 import { HomeModule } from './pages/home/home.module';
 
@@ -13,16 +15,26 @@ const routes: Routes = [
   },
   {
     path:"home",
-    loadChildren: ()=> import('src/app/pages/login/login.module').then(m=>HomeModule)
+    loadChildren: ()=> import('src/app/pages/home/home.module').then(m=>HomeModule)
   },
   {
     path:"admin/productos",
-    loadChildren: ()=> import('src/app/pages/login/login.module').then(m=>ProductosModule)
+    loadChildren: ()=> import('src/app/pages/admin/productos/productos.module').then(m=>ProductosModule)
   },
   {
     path:"admin/categorias",
-    loadChildren: ()=> import('src/app/pages/login/login.module').then(m=>CategoriasModule)
-  } 
+    loadChildren: ()=> import('src/app/pages/admin/categorias/categorias.module').then(m=>CategoriasModule)
+  },
+  {
+    path:"admin/categorias/editar",
+    loadChildren: ()=> import('src/app/pages/admin/categorias/editar/editar.module').then(m=>EditarCategoriaModule)
+  }
+  
+  /*,
+  {
+    path:"admin/categorias/editar",
+    loadChildren: ()=> import('src/app/pages/admin/categorias/editar/editar.module').then(m=>EditarComponent)
+  } */
 ];
 
 @NgModule({
