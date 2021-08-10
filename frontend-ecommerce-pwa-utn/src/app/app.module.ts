@@ -19,6 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { TokenInterceptor } from './services/token-interceptor.service';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -33,7 +35,6 @@ import { TokenInterceptor } from './services/token-interceptor.service';
     BrowserAnimationsModule,
     HttpClientModule,
     NavbarModule
-    
     
     
     

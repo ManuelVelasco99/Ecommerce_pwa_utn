@@ -10,21 +10,27 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DialogcatComponent } from './dialogcat/dialogcat.component';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 @NgModule({
   declarations: [
-    CategoriasComponent
+    CategoriasComponent,
+    DialogcatComponent
   ],
   imports: [
     CommonModule,
     CategoriasRoutingModule,
+    
 
     //Material
     MatTableModule,
     MatPaginatorModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
     
   ]
 })

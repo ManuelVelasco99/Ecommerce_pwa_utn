@@ -3,7 +3,12 @@ table {
     margin: 10px;
   }
 
-  .edit{
+  .delete{
       color: red;
       cursor: pointer;
   }
+
+  .edit{
+    color: darkblue;
+    cursor: pointer;
+}

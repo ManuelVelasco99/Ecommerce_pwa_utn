@@ -1,6 +1,8 @@
+import { ComponentType } from '@angular/cdk/portal';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
@@ -13,12 +15,15 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class EditarComponent implements OnInit {
 
-  constructor(public fb:FormBuilder,private router : Router, private route: ActivatedRoute, private adminService : AdminService) { }
+  constructor(public fb:FormBuilder,private router : Router, 
+    private route: ActivatedRoute, private adminService : AdminService) { }
   
   formCategory = this.fb.group({
     id:["",[Validators.required]],
     nombre:["", Validators.required]
   })
+
+  
 
 
   id_cat : any ;

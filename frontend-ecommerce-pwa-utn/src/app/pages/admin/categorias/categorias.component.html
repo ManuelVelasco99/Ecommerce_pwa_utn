@@ -31,10 +31,10 @@
 
       <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef> Eliminar </th>
-        <td mat-cell *matCellDef="let element"> 
+        <td mat-cell *matCellDef="let element;let i = index;"> 
            
 
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="edit" (click)="delete(element.id_category)" >delete</mat-icon> </td>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="delete" (click)="openDialogDelete(element.id_category,i)" >delete</mat-icon> </td>
             
             
             

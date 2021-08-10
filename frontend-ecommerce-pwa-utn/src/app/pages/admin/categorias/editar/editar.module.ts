@@ -8,6 +8,7 @@ import { EditarComponent } from './editar.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     EditarRoutingModule,FormsModule, 
     ReactiveFormsModule,
-
+    
+    
     //Material
     MatButtonModule,
     MatInputModule
