@@ -12,3 +12,8 @@ table {
     color: darkblue;
     cursor: pointer;
 }
+
+.grid{
+  display: grid;
+  grid-template-columns: 15vh 30vh;
+}

@@ -1,6 +1,10 @@
-<p>categorias works!</p>
-<br>
-<h2 style="padding-left: 10px;">Categorias</h2>
+<div class="grid">
+  <h2 style="padding-left: 10px; padding-top: 10px;">Categorias</h2>
+  <div style ="display: flex; align-items: center;">
+    <button mat-stroked-button color="primary" style="width: fit-content; height: fit-content;" (click)="irCreateCategoria()">Nueva Categoria</button>
+  </div>
+</div>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.

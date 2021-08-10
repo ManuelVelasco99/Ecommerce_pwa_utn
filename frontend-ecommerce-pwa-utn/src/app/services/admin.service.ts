@@ -23,5 +23,9 @@ export class AdminService {
   deleteCategory(id:string):any{
     return this.http.post(`${this.rutaApi}/admin/categories/delete?id=${id}&value=1`,{})
   }
+
+  createCategory(categoryData:{}):any{
+    return this.http.post(`${this.rutaApi}/admin/categories/create`,categoryData,{})
+  }
   
 }

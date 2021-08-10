@@ -57,13 +57,14 @@ export={
             const nuevaCategoria = await query('INSERT INTO CATEGORY SET ?',[category]);
             res.json({
                 estado:'success',
-                categoria:nuevaCategoria          
+                categoria:nuevaCategoria        
             })
         }
         catch(error){
             res.json({
                 estado:'error',
                 error:error
+                
             })
         }
     },

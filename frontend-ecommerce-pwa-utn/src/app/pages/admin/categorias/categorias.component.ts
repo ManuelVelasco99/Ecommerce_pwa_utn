@@ -52,12 +52,12 @@ export class CategoriasComponent implements OnInit {
     if(deleteCategory){
       this.deleteCategory(id,i)
     }
-  })
-  
-  
+  }) 
+}
 
-  }
-
+irCreateCategoria(){
+  this.router.navigate(['/admin/categorias/create'])
+}
 
   deleteCategory(id:string,i:number){
       this.adminService.deleteCategory(id).subscribe((databackend:any)=>{

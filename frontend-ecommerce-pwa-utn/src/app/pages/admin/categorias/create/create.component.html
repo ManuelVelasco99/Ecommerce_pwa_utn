@@ -1,0 +1,18 @@
+<div class="ml">
+    <div class="grid">
+       
+            <h2 style=" padding-top: 10px;">Nueva categoria</h2>
+        
+        <div style ="display: flex; align-items: center;">
+            <button mat-raised-button (click)='irCategorias()' style="width: fit-content; height: fit-content;">Regresar</button>
+        </div>
+    </div>
+    <form class="example-form"  [formGroup]="this.formCategory" style="margin-top: 20px;">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput   >
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)='crearCategoria()'>Crear</button>
+    </form>
+</div>
