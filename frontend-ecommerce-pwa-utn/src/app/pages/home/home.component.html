@@ -1,8 +1,5 @@
-<p>home works!</p>
 
-
-
-  <div class="grid">
+  <div class="grid" style="margin-top: 15px;">
 
     <div class="">
     
@@ -15,7 +12,7 @@
     </div>
     <div class="gridProductos">
       <mat-card *ngFor="let produ of prod" class="example-card mycard">
-        <img mat-card-image class="img" [src]= "'http://localhost:3000/admin/proudcts/image?image=' + produ.imagen" alt="Photo of a Shiba Inu">
+        <img mat-card-image class="img" [src]= "'http://localhost:3000/admin/proudcts/image?image=' + produ.imagen" alt="">
         <mat-card-header>
   
           <mat-card-title>{{produ.nombre}}</mat-card-title>

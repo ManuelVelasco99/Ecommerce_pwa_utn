@@ -1,0 +1,8 @@
+.ml{margin-left: 6vh;
+    margin-top: 2vh;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 20vh 30vh;
+  }

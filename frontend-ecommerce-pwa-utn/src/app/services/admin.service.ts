@@ -27,5 +27,17 @@ export class AdminService {
   createCategory(categoryData:{}):any{
     return this.http.post(`${this.rutaApi}/admin/categories/create`,categoryData,{})
   }
+
+  deleteProduct(id:string):any{
+    return this.http.post(`${this.rutaApi}/admin/products/delete?id=${id}&value=1`,{})
+  }
+
+  createProduct(formData: FormData):any{
+    return this.http.post(`${this.rutaApi}/admin/products/create`,formData,{})
+  }
+
+  updateProduct(formData: FormData):any{
+    return this.http.post(`${this.rutaApi}/admin/products/update`,formData,{})
+  }
   
 }

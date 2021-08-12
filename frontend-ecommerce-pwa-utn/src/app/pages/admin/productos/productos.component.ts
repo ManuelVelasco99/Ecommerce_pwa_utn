@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/services/home.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { AdminService } from 'src/app/services/admin.service';
+import { DialogprodComponent } from './dialogprod/dialogprod.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +15,8 @@ import { MatTableDataSource } from '@angular/material/table';
 
 export class ProductosComponent implements OnInit {
 
-  constructor(private productService:HomeService) { }
+  constructor(private productService:HomeService,private matDialog : MatDialog, private adminService : AdminService,
+    private router : Router) { }
 
   
 
@@ -24,14 +29,36 @@ export class ProductosComponent implements OnInit {
 
   }
 
+  irCrearProducto(){
+    this.router.navigate(['/admin/productos/create'])
+  }
 
   edit(id:any){
-    console.log('editaste',id)
+    this.router.navigate(['/admin/productos/editar'], { queryParams: { id: id } })
   }
 
-  delete(id:any){
-    console.log('borraste',id)
+  openDialogDelete(id : string,i:number){
+    console.log(i,'esi')
+      let deleteCategory : boolean ;
+    let dialogRef = this.matDialog.open(DialogprodComponent,{});
+    dialogRef.afterClosed().subscribe((result:any)=>{
+      deleteCategory=result;
+      if(deleteCategory){
+        this.deleteProduct(id,i)
+      }
+    }) 
   }
+
+
+  deleteProduct(id:string,i:number){
+    this.adminService.deleteProduct(id).subscribe((databackend:any)=>{
+      console.log(databackend.estado,databackend.estado === 'success')
+      if(databackend.estado === 'success'){      
+        this.dataSource.data.splice(i,1);
+        this.dataSource._updateChangeSubscription();
+      }       
+    })
+}
 
   ELEMENT_DATA!: any[];
   dataSource = new MatTableDataSource<any>(this.ELEMENT_DATA);

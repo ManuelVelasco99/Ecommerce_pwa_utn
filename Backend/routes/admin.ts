@@ -21,4 +21,8 @@ adminRoutes.get('/proudcts/image',adminProductosController.getProductImage);
 
 adminRoutes.post('/products/create',verifyToken,verifyAdmin,adminProductosController.createProducts);
 
+adminRoutes.post('/products/delete',verifyToken,verifyAdmin,adminProductosController.deleteProduct);
+
+adminRoutes.post('/products/update',verifyToken,verifyAdmin,adminProductosController.updateProduct);
+
 export default adminRoutes;

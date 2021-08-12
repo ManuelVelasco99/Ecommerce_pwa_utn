@@ -8,7 +8,7 @@ const verifyAdmin = (req:any, res:Response, next:NextFunction)=>{
     }
     else
     {res.json({
-        estado:'error',
+        estado:false,
         mensaje:'el usuario no es admin'
     })}
 }

@@ -18,5 +18,9 @@ export class HomeService {
   getProducts():any{
     return this.http.get(`${this.rutaApi}/home/products`);
   }
+
+  getProduct(id : string):any{
+    return this.http.get(`${this.rutaApi}/home/product?id=${id}`)
+  }
 }
 

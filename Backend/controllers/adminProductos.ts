@@ -35,6 +35,7 @@ export={
 
     createProducts:async(req:any, res:Response) =>{
         try{
+        
         const precioProducto = req.body.precio;
         if(req.files === null){
             return res.status(400).json({
@@ -89,6 +90,76 @@ export={
         const imgUrl =  filesystem.getImageUrl(req.query.image);
         console.log(imgUrl);
         res.sendFile(imgUrl);
+    },
+
+    deleteProduct:async (req:Request, res: Response)=>{
+        try{
+            const id_product=req.query.id;
+            const value = req.query.value; //Si value es 1 la categoria se elimina si es 0 se recupera
+            const prodEliminado = await query('UPDATE PRODUCT SET eliminado=? WHERE id_product=?',[value,id_product])
+            res.json({estado:'success',
+                    delProd:prodEliminado
+            })
+        }
+        catch(error){
+            res.json({estado:'error',
+                    error:error
+            })
+        }
+    },
+
+    updateProduct:async(req:any, res:Response)=>{
+        try{
+            const imageOld = req.body.imageOld;
+            delete req.body.imageOld;
+            let prod : IproductCreate;
+            const id_product : number = req.body.id_product;
+            delete req.body.id_product;
+            const price = req.body.price;
+            delete req.body.price;
+            prod=req.body;
+            let imagen : IfileUpload;
+            if(!(req.files == null)) {
+                imagen = req.files.image;
+                const nombreImagenTemp = await filesystem.guardarImagenTemporal(imagen);
+                filesystem.ImagenDeTempHaciaPost(nombreImagenTemp);
+                filesystem.deleteImage(imageOld);
+                prod.imagen = nombreImagenTemp;   
+            }
+
+            if(req.body.price == null){
+                console.log('precio undefined')
+                const update = await query('UPDATE PRODUCT SET ? WHERE id_product=?',[prod,id_product]);
+                res.json({
+                    estado:'success',
+                    body:prod ||'null',
+                    file: req.files||'',
+                    query: update 
+                })
+            }
+            
+                await query("start transaction");
+                console.log(prod);
+                const update = await query('UPDATE PRODUCT SET ? WHERE id_product=?',[prod,id_product]);
+                const precio ={ 
+                    id_product:id_product,
+                    price:price
+                };
+                await query('INSERT INTO PRICE SET ?',[precio]);
+                await query("commit");
+                res.json({
+                    estado:'success',
+                    body:prod ||'null',
+                    query: update 
+                })         
+        }
+        catch(error){
+            res.json({
+                estado:'error',
+                error: error
+            })
+        }
     }
+
 
 }

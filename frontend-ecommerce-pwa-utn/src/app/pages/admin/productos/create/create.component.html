@@ -1,0 +1,48 @@
+<div class="ml">
+    <div class="grid">       
+        <h2 style="padding-top: 10px;">Nuevo producto</h2>
+    <div style ="display: flex; align-items: center;">
+        <button mat-raised-button  style="width: fit-content; height: fit-content;" (click)="irProductos()">Regresar</button>
+    </div>
+    </div>
+    <form class="example-form"  [formGroup]="this.formProduct" style="margin-top: 20px;">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput   >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Descripcion</mat-label>
+    
+            <textarea formControlName="descripcion" matInput ></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Selecciona una categoria</mat-label>
+            <mat-select formControlName="id_category">
+              <mat-option *ngFor="let cat of categories" [value]="cat.id_category">
+                {{cat.nombre}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Stock</mat-label>
+            <input formControlName="stock" matInput type="number" min="0"  >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Precio</mat-label>
+            <input formControlName="precio" matInput type="number" min="0"  >
+        </mat-form-field>
+        <br>
+        <button mat-stroked-button color="primary" (click)="fileInput.click()">{{textButton}}</button>
+        <input hidden #fileInput type="file" id="file" (change)="onFileChange($event)">
+        <br> <br>
+        <button mat-raised-button color="primary" (click)='crearProducto()'>Crear</button>
+    </form>
+    <br>
+    <br> <br>
+
+</div>
+

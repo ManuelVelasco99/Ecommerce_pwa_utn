@@ -8,14 +8,15 @@
       </mat-menu>
     </button>
     <span (click)="irHome()" class="pointer">Ecommerce</span>
-    <button mat-button [matMenuTriggerFor]="menu">Admin</button>
+    <button *ngIf="adminShow" mat-button [matMenuTriggerFor]="menu">Admin</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="irProductos()">Productos</button>
   <button mat-menu-item (click)="irCategorias()">Categorias</button>
 </mat-menu>
     <span class="example-spacer"></span>
+    <button *ngIf="condition" mat-raised-button (click)="irLogin()" >Iniciar Sesion</button>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+      <mat-icon *ngIf="!condition" (click)="logout()">logout</mat-icon>
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon>share</mat-icon>

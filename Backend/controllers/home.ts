@@ -40,5 +40,28 @@ export={
                 error:error
             })
         }
+    },
+
+    getProduct:async(req:any , res:Response) =>{
+        try{
+            const id = req.query.id;    
+            const product = await query(`select pro.*,pri.price,pri.fecha_desde from product pro
+            inner join price pri on pro.id_product=pri.id_product
+            WHERE pro.id_product=?
+            order by pri.fecha_desde desc
+            limit 1`,
+            [id]);
+            res.json({
+                estado:'success',
+                product:product
+            })
+
+        }
+        catch(error){
+            res.json({
+                estado:'error',
+                error:error
+            })
+        }
     }
 };

@@ -56,6 +56,11 @@ export default class FileSystem{
         
     };
 
+    public deleteImage(img:string){
+        const pathProducts:string = path.resolve(__dirname, '../uploads/products');
+        fs.unlinkSync(`${pathProducts}/${img}`);
+    }
+
     public getImageUrl(img:string){
         return path.resolve(__dirname,'../uploads/products',img)
     };

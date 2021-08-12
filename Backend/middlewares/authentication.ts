@@ -5,7 +5,7 @@ import Token from "../class/token";
 
     const verifyToken = (req:any, res:Response, next:NextFunction)=>{
         const userToken = req.get('x-token') || "";
-        
+        //console.log(userToken);
         Token.comprobarToken(userToken)
         .then(decoded=>{
             req.user = decoded.user
@@ -13,6 +13,7 @@ import Token from "../class/token";
         })
         .catch(error=>{
             res.json({
+                estado:false,
                 mensaje: "Token incorrecto",
                 error: error
             })

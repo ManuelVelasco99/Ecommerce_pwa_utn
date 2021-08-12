@@ -8,6 +8,9 @@ import { ProductosComponent } from './productos.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { DialogprodComponent } from './dialogprod/dialogprod.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -15,7 +18,8 @@ import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    ProductosComponent
+    ProductosComponent,
+    DialogprodComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +28,9 @@ import {MatIconModule} from '@angular/material/icon';
     //Material
     MatTableModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule
   ]
 })
 export class ProductosModule { }
