@@ -1,0 +1,13 @@
+.text {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    margin-top: 30px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 20px;
+}

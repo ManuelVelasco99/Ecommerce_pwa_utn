@@ -23,6 +23,11 @@ let variables_entorno = {
     NM_USER: process.env.NM_USER,
     NM_PASS: process.env.NM_PASS,
 
+    //FrontEnd
+    FE_SERVER_HOST: process.env.FE_SERVER_HOST,
+    FE_SERVER_PORT: process.env.FE_SERVER_PORT,
+
+
 
 }
 

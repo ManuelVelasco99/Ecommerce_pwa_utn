@@ -37,6 +37,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
+  irRegistro(){
+    this.router.navigate(['/registro'])
+  }
+
   irHome(){
     this.router.navigate(['/home'])
   }

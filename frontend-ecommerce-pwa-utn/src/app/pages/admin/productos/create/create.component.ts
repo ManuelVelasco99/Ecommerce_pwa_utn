@@ -103,6 +103,7 @@ export class CreateProductosComponent implements OnInit {
   }
 
   crearProducto(){
+    
     if(this.formProduct.valid && this.inputFile ){
 
       let form = new FormData();

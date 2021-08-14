@@ -1,20 +1,14 @@
 
 <mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon [matMenuTriggerFor]="menuhome">menu</mat-icon>
-      <mat-menu #menuhome="matMenu">
-        <button mat-menu-item (click)="irLogin()">Login</button>
-        <button mat-menu-item>Item 2</button>
-      </mat-menu>
-    </button>
-    <span (click)="irHome()" class="pointer">Ecommerce</span>
-    <button *ngIf="adminShow" mat-button [matMenuTriggerFor]="menu">Admin</button>
+    <span style="margin-left: 20px;" (click)="irHome()" class="pointer">Ecommerce</span>
+    <button style="margin-left: 20px;" *ngIf="adminShow" mat-raised-button [matMenuTriggerFor]="menu">Admin</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="irProductos()">Productos</button>
   <button mat-menu-item (click)="irCategorias()">Categorias</button>
 </mat-menu>
     <span class="example-spacer"></span>
-    <button *ngIf="condition" mat-raised-button (click)="irLogin()" >Iniciar Sesion</button>
+    <button *ngIf="condition" mat-raised-button (click)="irLogin()" style="margin-right: 10px ;">Iniciar Sesion</button>
+    <button *ngIf="condition" mat-raised-button (click)="irRegistro()" >Registrarme</button>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon *ngIf="!condition" (click)="logout()">logout</mat-icon>
     </button>

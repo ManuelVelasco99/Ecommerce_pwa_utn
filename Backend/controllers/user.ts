@@ -16,11 +16,12 @@ export = {
             const userRegister:IuserRegister = req.body;
             userRegister.id_validate = unidid();
             userRegister.password = bcrypt.hashSync(userRegister.password,10);
+            userRegister.fecha_nacimiento = new Date(userRegister.fecha_nacimiento); 
             const insertResult = await query('INSERT INTO USER SET ?',[userRegister]);
             const emailEnvio = await emailClass.enviarEmail(userRegister.email,"Completa tu registro","su usuario fue registrado existosamente",
             `<h1>Hola ${userRegister.nombre}, te has registrado exitosamente.</h1>
-            <a href="http://${variables_entorno.SERVER_HOST}:${variables_entorno.SERVER_PORT}/user/validate?id_validate=${userRegister.id_validate}">Click aquí para validar tu usuario</a>`);
-            res.json({estado: 'success', mensaje: 'usuario registrado', emailEnvio:emailEnvio});
+            <a href="http://${variables_entorno.FE_SERVER_HOST}:${variables_entorno.FE_SERVER_PORT}/user/validate?id_validate=${userRegister.id_validate}">Click aquí para validar tu usuario</a>`);
+            res.json({estado: 'success', mensaje: 'usuario registrado', user:userRegister, email:emailEnvio,type:typeof userRegister.fecha_nacimiento });
         }
         catch(error){
             res.json({estado:'error',error:error})
@@ -67,7 +68,24 @@ export = {
         try{
             const param={id_validate:req.query.id_validate};
             const resultQuery = await query("UPDATE USER SET habilitado=1 WHERE ?",[param]);
-            res.json({estado: 'success', mensaje: param,q:resultQuery});
+            const user = await query("SELECT * FROM USER WHERE ?",[param]);
+            res.json({estado: 'success', mensaje: param,q:resultQuery,user:user[0]});
+        }
+        catch(error){
+            res.json({estado:'error',error:error})
+        }
+    },
+
+    validateEmail :async(req:any, res:Response)=>{
+        try{
+            const param={email:req.query.email};
+            let respuesta : boolean;
+            const resultQuery = await query("SELECT * FROM USER WHERE ?",[param]);
+            if(resultQuery.length==0) respuesta = true; else respuesta = false;
+            res.json({
+                estado: 'success',
+                value: respuesta
+            });
         }
         catch(error){
             res.json({estado:'error',error:error})

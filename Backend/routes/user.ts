@@ -13,4 +13,6 @@ userRoutes.get('/profile',verifyToken,verifyAdmin, userController.profileUser);
 
 userRoutes.get('/validate',userController.validateUser);
 
+userRoutes.get('/email',userController.validateEmail);
+
 export default userRoutes;

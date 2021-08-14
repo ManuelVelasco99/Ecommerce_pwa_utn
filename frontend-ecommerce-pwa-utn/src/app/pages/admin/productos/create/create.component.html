@@ -39,8 +39,9 @@
         <button mat-stroked-button color="primary" (click)="fileInput.click()">{{textButton}}</button>
         <input hidden #fileInput type="file" id="file" (change)="onFileChange($event)">
         <br> <br>
-        <button mat-raised-button color="primary" (click)='crearProducto()'>Crear</button>
+    <button hidden  *ngIf=true   color="primary"  >Crear</button>
     </form>
+    <button *ngIf=true mat-raised-button color="primary"  >Crear</button>
     <br>
     <br> <br>
 

@@ -34,6 +34,32 @@ export class UsuariosService {
   verificarToken(){
     return this.http.get(`${this.rutaApi}/users/`)
   }
+
+  registrarUsuario(registroData:{}){
+    return this.http.post(`${this.rutaApi}/user/register`,registroData,{})
+  }
+
+
+  
+  /**
+  * Verifica si el mail ya esta registrado
+  *
+  * @param email Es el email a validar
+  */
+  validarEmail(email: string){
+    return this.http.get(`${this.rutaApi}/user/email?email=${email}`)
+  }
+
+  /**
+  * Valida el usuario
+  *
+  * @param uid Es el uinique id que se genero al momento de registrarse
+  */
+  validarUsuario(uid:string){
+    return this.http.get(`${this.rutaApi}/user/validate?id_validate=${uid}`)
+  }
+
+
 }
 
 interface respuesta {

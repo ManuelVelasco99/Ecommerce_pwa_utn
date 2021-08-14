@@ -1,0 +1,69 @@
+
+<br>
+<form class="body" [formGroup]="this.formRegistro">
+    <div class="example-form" >
+        <h2 class="example-full-width logintext">Registro</h2>
+        <div class="backgroundRed" *ngIf="showE">
+          <p>Usuario o contraseña incorrectos. {{showE}}</p>
+
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput  placeholder="" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Apellido</mat-label>
+            <input formControlName="apellido" matInput  placeholder="" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input (change)="validarEmail()" formControlName="email" matInput type="email" placeholder="E. xPizza" >
+          
+          
+        </mat-form-field>
+        <p *ngIf="this.formRegistro.controls.email.getError('emailDuplicado')" style="color:red;">El email ya está registrado</p>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password" placeholder="*********" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Sexo</mat-label>
+            <mat-select formControlName="sexo">
+              <mat-option *ngFor="let sex of sexs" [value]="sex.value">
+                {{sex.name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Teléfono</mat-label>
+            <span matPrefix>+54 &nbsp;</span>
+            <input formControlName="telefono" type="number" matInput placeholder="555-555-5555" >
+            <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field onclick='document.getElementById("datapic").click()' appearance="fill" class="example-full-width">
+            <mat-label onclick='document.getElementById("datapic").click()' >Fecha de nacimiento</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fecha_nacimiento"  placeholder="mm/dd/aaaa" onclick='document.getElementById("datapic").click()' >
+            <mat-datepicker-toggle id="datapic" matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <script>
+            document.getElementById('datapic').click
+        </script>
+        
+
+         <div class="loginButton">
+             <button c mat-raised-button  color="primary" (click)='registrar()'>Registrarme</button>
+
+         </div>
+   
+        </div>
+
+    </form>  
+   
