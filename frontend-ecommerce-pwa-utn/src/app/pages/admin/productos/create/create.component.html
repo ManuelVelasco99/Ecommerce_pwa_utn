@@ -40,8 +40,8 @@
         <input hidden #fileInput type="file" id="file" (change)="onFileChange($event)">
         <br> <br>
     <button hidden  *ngIf=true   color="primary"  >Crear</button>
+    <button *ngIf=true mat-raised-button color="primary" (click)=crearProducto()  >Crear</button>
     </form>
-    <button *ngIf=true mat-raised-button color="primary"  >Crear</button>
     <br>
     <br> <br>
 

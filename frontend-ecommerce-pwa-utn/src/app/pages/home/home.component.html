@@ -5,9 +5,12 @@
     
       <mat-selection-list #shoes [multiple]="false">
         <mat-list-item role="listitem" style="font-weight: bold;">Categorias</mat-list-item>
-        <mat-list-option *ngFor="let shoe of cate" [value]="shoe">
-          {{shoe}}
-        </mat-list-option>
+        
+        <mat-list-option (click)="irHomeCategoria(categoria.id_category)" *ngFor="let categoria of cate" [value]="categoria">
+            <a style="text-decoration: none; color: black;" href="{{this.rutaApi}}/home?id_category={{categoria.id_category}}">
+            {{categoria.nombre}}
+          </a>
+          </mat-list-option>
       </mat-selection-list>
     </div>
     <div class="gridProductos">
