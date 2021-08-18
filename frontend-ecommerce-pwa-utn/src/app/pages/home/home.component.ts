@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
         const prodA : Array<any> = databackend.productos;
         prodA.forEach(element => {
           this.prod.push({
+            id : element.id_product,
             nombre:element.nombre,
             precio:element.price,
             imagen:element.imagen
@@ -60,10 +61,38 @@ export class HomeComponent implements OnInit {
         console.log(this.prod);
       })
     }
-    
-  
-    
+     
   }
+
+  productoEnCarrito(id:string, carrito:Array<any>){
+    let inCarrito : boolean = false;
+    carrito.forEach(element => {
+      if(element==id) inCarrito = true;
+    });
+    return inCarrito
+  }
+
+  addCarrito(id:string){
+    
+    if(localStorage.getItem('carrito') == null){
+      let carrito = [id];
+      localStorage.setItem('carrito',JSON.stringify(carrito));
+      console.log(carrito);
+    }
+    else{
+      let carrito : Array<any> = JSON.parse(localStorage.getItem('carrito')||'');
+      if(!this.productoEnCarrito(id,carrito)){
+        carrito.push(id);
+        localStorage.setItem('carrito',JSON.stringify(carrito));
+        alert('Se añadió correctamente el producto al carrito')
+      }
+      else{
+        alert('El producto ya se encuentra en el carrito')
+      }   
+    } 
+  }
+
+
   irHomeCategoria(id : string){
     this.router.navigate(['/home'], { queryParams: { id_category: id } })
   }

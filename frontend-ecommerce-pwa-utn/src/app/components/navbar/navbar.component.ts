@@ -50,8 +50,13 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
-    this.authService.logout()
-    this.router.navigate(['/login'])
+    if(confirm('Deseas cerrar session?'))
+    {this.authService.logout()
+    this.router.navigate(['/login'])}
+  }
+
+  irCarrito(){
+    this.router.navigate(['/carrito'])
   }
 
   condition = true;

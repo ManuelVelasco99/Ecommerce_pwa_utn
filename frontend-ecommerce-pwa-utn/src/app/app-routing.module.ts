@@ -11,6 +11,7 @@ import { CreateProductosModule } from './pages/admin/productos/create/create.mod
 import { EditarProductosModule } from './pages/admin/productos/editar/editar.module';
 
 import { ProductosModule } from './pages/admin/productos/productos.module';
+import { CarritoModule } from './pages/carrito/carrito.module';
 import { HomeModule } from './pages/home/home.module';
 import { ValidateModule } from './pages/user/validate/validate.module';
 
@@ -61,7 +62,12 @@ const routes: Routes = [
   {
     path:"user/validate",
     loadChildren: ()=> import('src/app/pages/user/validate/validate-routing.module').then(m=>ValidateModule)
-  }
+  },
+  {
+    path:"carrito",
+    loadChildren: ()=> import('src/app/pages/carrito/carrito-routing.module').then(m=>CarritoModule)
+  },
+
   
   /*,
   {

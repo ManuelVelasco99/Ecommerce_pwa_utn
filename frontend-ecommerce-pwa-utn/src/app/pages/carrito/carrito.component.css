@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+    margin: 10px;
+  }
+
+  
+.imagen {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.titulo{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.divPago {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.textoPago {
+    font-size: x-large;
+    margin-top: 15px;
+}
+
+.buttonPago {
+    margin-top: 6px;
+    margin-right: 20px;
+    margin-left: 20px;
+}

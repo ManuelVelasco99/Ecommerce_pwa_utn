@@ -26,8 +26,8 @@
           </p>
         </mat-card-content>
         <mat-card-actions style="display:flex; justify-items: center; justify-content: center;">
-          <button mat-button>Comprar</button>
-          <button mat-button>Agregar al carrito</button>
+          <button mat-button>Ver</button>
+          <button mat-button (click)="addCarrito(produ.id)" >Agregar al carrito</button>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -40,6 +40,4 @@
 
 
 
-  <p>
-    Option selected: {{shoes.selectedOptions.selected[0]?.value}}
-  </p>
+  
