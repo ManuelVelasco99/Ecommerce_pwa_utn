@@ -24,8 +24,8 @@ let variables_entorno = {
     NM_PASS: process.env.NM_PASS,
 
     //FrontEnd
-    FE_SERVER_HOST: process.env.FE_SERVER_HOST,
-    FE_SERVER_PORT: process.env.FE_SERVER_PORT,
+    FE_SERVER_HOST: process.env.FE_SERVER_HOST || 'localhost' ,
+    FE_SERVER_PORT: process.env.FE_SERVER_PORT || '4200',
 
 
 
