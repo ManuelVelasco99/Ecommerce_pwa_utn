@@ -21,7 +21,7 @@ export = {
             const emailEnvio = await emailClass.enviarEmail(userRegister.email,"Completa tu registro","su usuario fue registrado existosamente",
             `<h1>Hola ${userRegister.nombre}, te has registrado exitosamente.</h1>
             <a href="http://${variables_entorno.FE_SERVER_HOST}:${variables_entorno.FE_SERVER_PORT}/user/validate?id_validate=${userRegister.id_validate}">Click aquí para validar tu usuario</a>`);
-            res.json({estado: 'success', mensaje: 'usuario registrado', user:userRegister, email:emailEnvio,type:typeof userRegister.fecha_nacimiento });
+            res.json({estado: 'success', mensaje: 'usuario registrado' });
         }
         catch(error){
             res.json({estado:'error',error:error})
@@ -69,7 +69,7 @@ export = {
             const param={id_validate:req.query.id_validate};
             const resultQuery = await query("UPDATE USER SET habilitado=1 WHERE ?",[param]);
             const user = await query("SELECT * FROM USER WHERE ?",[param]);
-            res.json({estado: 'success', mensaje: param,q:resultQuery,user:user[0]});
+            res.json({estado: 'success', mensaje: 'Email validado exitosamente'});
         }
         catch(error){
             res.json({estado:'error',error:error})

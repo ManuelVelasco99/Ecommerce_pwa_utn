@@ -9,13 +9,17 @@ Este proyecto pertenece al curso Programador web avanzado que dicta la UTN BA. E
 * TypeScript
 * JavaScrpit
 ## Iniciando el proyecto
-###### Iniciar los servicios de MySql
-Levantar los servicios de mysql y ejecutar los scripts de creacion de la Base de Datos y sus tablas, y el de insercion de datos iniciales.
+##### Iniciar los servicios de MySql y crear la base de datos
+Iniciamos los servicios de mysql y ejecutar los scripts que se encuentran en la carpeta ../Mysql_scripts.
 
-###### Iniciar el Backend
+##### Iniciar el Backend
 Para las instricciones sobre el Backend dirigirse al readmne ubicado en su respectiva carpeta.
 
-###### Iniciar el Frontend
+##### Iniciar el Frontend
 Para las instricciones sobre el Frontend dirigirse al readmne ubicado en su respectiva carpeta.
 
-### Desarrollado por Velasco Manuel.
+## Documentacion
+
+Algunos de los servicios del Backend se encuentran documentados, pueden verse en el archivo html dentro de la carpeta ../Swagger
+
+### Desarrollado por Velasco Manuel. 
