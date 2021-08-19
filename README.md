@@ -13,14 +13,14 @@ Y el carrito de compras aunque sin la opcion de pagar los productos.
 * TypeScript
 * JavaScrpit
 ## Iniciando el proyecto
-##### Iniciar los servicios de MySql y crear la base de datos
+#### Iniciar los servicios de MySql y crear la base de datos
 Iniciamos los servicios de mysql y ejecutar los scripts que se encuentran en la carpeta ../Mysql_scripts.
 
-##### Iniciar el Backend
-Para las instricciones sobre el Backend dirigirse al readmne ubicado en su respectiva carpeta.
+#### Iniciar el Backend
+Para las instrucciones sobre el Backend dirigirse al readmne ubicado en su respectiva carpeta.
 
-##### Iniciar el Frontend
-Para las instricciones sobre el Frontend dirigirse al readmne ubicado en su respectiva carpeta.
+#### Iniciar el Frontend
+Para las instrucciones sobre el Frontend dirigirse al readmne ubicado en su respectiva carpeta.
 
 ### Intrucciones para utilizar el proyecto
 Una vez corriento el front y el back, tendremos que ir a la ruta donde esta corriendo angular ej 'localhost4200'/home.
@@ -62,4 +62,4 @@ Algunos de los servicios del Backend se encuentran documentados, pueden verse en
 
 ---
 
-### Desarrollado por Velasco Manuel. 
+### Desarrollado por Velasco Manuel
