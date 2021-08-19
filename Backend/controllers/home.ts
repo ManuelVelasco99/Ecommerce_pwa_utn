@@ -5,7 +5,7 @@ export={
 
     getCategories:async(req:Request, res:Response) =>{
         try{const categorias = await query('SELECT * FROM CATEGORY WHERE habilitado=1 AND eliminado=0');
-        console.log(categorias)
+        //console.log(categorias)
         res.json({
             estado:'success',
             categorias:categorias})
@@ -22,13 +22,13 @@ export={
         try{
         let cateString : any;
         if(req.query.id_category==null){
-            console.log('sin query')
+            //console.log('sin query')
             cateString = 'true';
         }
         else{
             cateString = `product.id_category=${req.query.id_category}`
         }
-        console.log(cateString,'j');
+        //console.log(cateString,'j');
         await query(`drop temporary table if exists product_price`);
         await query(`create temporary table product_price
         SELECT PRODUCT.id_product,MAX(PRICE.fecha_desde) fecha_desde  

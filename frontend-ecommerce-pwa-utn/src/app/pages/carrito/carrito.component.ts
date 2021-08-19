@@ -20,7 +20,7 @@ export class CarritoComponent implements OnInit {
   ngOnInit(): void {
     
     if(localStorage.getItem('carrito') == null){
-      console.log('carrito vacio')
+      //console.log('carrito vacio')
     }
     else{
       let carrito : Array<any> = JSON.parse(localStorage.getItem('carrito')||'');

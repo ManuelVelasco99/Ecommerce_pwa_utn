@@ -36,7 +36,7 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id_product`),
   KEY `categoryFK_idx` (`id_category`),
   CONSTRAINT `categoryFK` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (46,1,'notebook','adsfdsfsdf',10,1,0,'97qxarwks7ht01n.jpg'),(47,13,'jbl','parlante',50,1,0,'97qxarwks7hvi3i.jpg'),(48,12,'Maincra','maincra',50,1,0,'97qxarwks7hzq03.jpg'),(49,1,'RTX 3090','placa de video',200,1,0,'97qxarwks7i1rdk.jpg'),(50,1,'macbook','notebook mc',20,1,0,'97qxarwks7i3o0d.jpg'),(51,14,'inodoro','inodoro q hablas',10,1,0,'97qx8ockscqi63b.jpg'),(52,15,'Esmirlo','para escabiar',100,1,0,'97qxfk4ks7vwmcc.jpg'),(53,1,'Teclado','teclado rgb',51,1,0,'97qx71sks81pq3h.jpg'),(54,1,'Impresora','imprime',10,1,0,'97qx8ockscq54le.jpg'),(55,13,'Auriculares Bluetooth','Auriculares con inalmbricos con bluetooth color rosa',150,1,0,'97qx8ockscq7rcz.jpg'),(56,16,'Heladera Samsung','Heladera Samsung con frízer',45,1,0,'97qx8ockscqfmbw.jpg'),(57,16,'Microondas Philco','Microondas philco con distintas funciones de cocción',40,1,1,'97qx8ockscqhivm.jpg');
+INSERT INTO `product` VALUES (58,17,'Notebook HP','Modelo X509JA Intel I3 1005 G1 | 4GB | 1Tb | 15.6 FULL HD',20,1,0,'97qx1ecksi8299u.jpg'),(59,17,'Macbook','Macbook Air 2015',50,1,0,'97qx1ecksi86lbl.jpg'),(60,17,'Placa de video RTX 2080','Placa de video con 8 GB VRAM',20,1,0,'97qx1ecksi886ev.jpg'),(61,18,'Palante JBL flip 3','Parlante Bluetoth con 25w de potencia rms',12,1,0,'97qx1ecksi89kry.jpg'),(62,18,'Auriculares Beat','Auriculares Beat con cable de 1.5 m de largo',20,1,0,'97qx1ecksi8bs1m.jpg'),(63,18,'Microfono HyperX','Microfono con luces RGB',20,1,0,'97qx1ecksi8f65m.jfif'),(64,19,'Microondas Philco','Microondas con multiples modos de coccion',20,1,0,'97qx1ecksi8ko9q.jpeg'),(65,19,'Heladera Samsung','Heladera samsung con freezer y dispenser de hielo',5,1,0,'97qx1ecksi8mnju.jpeg'),(66,20,'Cocina Longvie','Cocina con 4 hornallas y chispero.',5,1,0,'97qx1ecksi8od3b.jpeg'),(67,20,'Extractor Purificador de cocina',' ',10,1,0,'97qx1ecksi8pzor.jpeg'),(68,21,'Sofa 3 cuerpos','Color gris',20,1,0,'97qx1ecksi8rbil.jpeg'),(69,21,'Mesa baja circular','Madera de pino',23,1,0,'97qx1ecksi8sxh0.jpeg');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-18 18:29:07
+-- Dump completed on 2021-08-18 22:34:04

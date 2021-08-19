@@ -27,7 +27,7 @@ export class EditarProductosComponent implements OnInit {
     this.id_prod = this.route.snapshot.queryParamMap.get('id');
     this.homeService.getCategories().subscribe((databackend:any)=>{
       this.categories = databackend.categorias;
-      console.log(this.categories)
+      //console.log(this.categories)
     });
     this.homeService.getProduct(this.id_prod).subscribe((databackend:any)=>{
       this.product = databackend.product[0]
@@ -69,20 +69,20 @@ export class EditarProductosComponent implements OnInit {
     console.log(this.file)
 
     if(this.file.length <=0){
-      console.log("no se adjunto imagen");
+      //console.log("no se adjunto imagen");
       this.filename = "no hay imagen";
       this.file = [];
       return false
     }
 
     if(this.file[0].type!= 'image/jpeg'){
-      console.log("el formato no es valido");
+      //console.log("el formato no es valido");
       this.file = [];
       return false
     }
 
     if(this.file[0].size > maxSize){
-      console.log("ha superado en tamaño permitido");
+      //console.log("ha superado en tamaño permitido");
       this.file = [];
       return false
     }
@@ -96,8 +96,8 @@ export class EditarProductosComponent implements OnInit {
     const validacion = this.validarFile(event);
 
     if(validacion){
-      console.log('piola la pic');
-      console.log(event.target.files[0])
+      //console.log('piola la pic');
+      //console.log(event.target.files[0])
       this.file = event.target.files[0]
       let reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
@@ -105,7 +105,7 @@ export class EditarProductosComponent implements OnInit {
       this.url = (<FileReader>event.target).result;
       this.textButton=this.filename;
       this.inputFile = true;
-      console.log(this.url)
+      //console.log(this.url)
       }
     }
   } 
@@ -125,8 +125,8 @@ export class EditarProductosComponent implements OnInit {
       form.append('stock',this.formProduct.get('stock')?.value);
       if(!(this.formProduct.get('precio')?.value==this.product.price)) {console.log('dist',this.formProduct.get('precio')?.value); form.append('price',this.formProduct.get('precio')?.value);}
       this.adminService.updateProduct(form).subscribe((databackend:any)=>{
-        console.log('esperando respuesta')
-        console.log(databackend)
+       // console.log('esperando respuesta')
+        //console.log(databackend)
       })
       this.irProductos();
     }

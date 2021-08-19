@@ -25,15 +25,15 @@ export class LoginComponent implements OnInit {
   
 
   ejecutarLogin(){
-    console.log(this.formLogin.value,this.formLogin.valid);   
+    //console.log(this.formLogin.value,this.formLogin.valid);   
     if(this.formLogin.valid){ 
       this.usuariosService.login(this.formLogin.value).subscribe((dataBackend:any)=>{
-        console.log(dataBackend)
+        //console.log(dataBackend)
         if(dataBackend.mensaje == 'usuario o constraseña incorrecta'){
           this.showE = true;
         }
         if(dataBackend.mensaje == 'usuario logueado'){
-          console.log(dataBackend.token)
+          //console.log(dataBackend.token)
           this.authService.authenticate(dataBackend.token);
           this.router.navigate(['/home']);
         }

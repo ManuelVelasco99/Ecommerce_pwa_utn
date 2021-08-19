@@ -42,14 +42,13 @@ export class RegistroComponent implements OnInit {
   }]
 
   validarEmail(){
-    console.log('hola');
-    console.log(this.formRegistro.controls.email.value);
+    //console.log(this.formRegistro.controls.email.value);
     this.usuariosService.validarEmail(this.formRegistro.controls.email.value).subscribe((dataBackend : any)=>{
       if(!dataBackend.value){
         this.formRegistro.controls.email.setErrors({
           emailDuplicado: true
         });
-        console.log('esta mal')
+        //console.log('esta mal')
       }
       else{
         this.formRegistro.controls.email.setErrors(null);
@@ -57,8 +56,8 @@ export class RegistroComponent implements OnInit {
       /*this.formRegistro.controls.email.setErrors({
         notUnique: null
       });*/
-      console.log(this.formRegistro.controls.email.hasError('notUnique'))
-      console.log(this.formRegistro.controls.email.getError('emailDuplicado'))
+      //console.log(this.formRegistro.controls.email.hasError('notUnique'))
+      //console.log(this.formRegistro.controls.email.getError('emailDuplicado'))
     })
     
   }
@@ -69,7 +68,7 @@ export class RegistroComponent implements OnInit {
     //console.log(this.formRegistro.value);
     if(this.formRegistro.valid){
       this.usuariosService.registrarUsuario(this.formRegistro.value).subscribe((databackend:any)=>{
-        console.log(databackend)
+        //console.log(databackend)
       })
       this.router.navigate(['/home']);
     }

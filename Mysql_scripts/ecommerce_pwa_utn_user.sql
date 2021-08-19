@@ -47,7 +47,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (6,'leilacostacurta2@gmail.com','$2b$10$T.vqt8idlqFWLzDz4Ji1b.jWbIVZ1q6G7GyhvINDNFc2VzetrCxJy','2002-10-09','M','Leila','Costacurta','5555555555',0,1,'97qxhhgksaq5u96'),(8,'britezaleja@gmail.com','$2b$10$JLQ0dxaAObt3uj8OlNU5juoz90kf9qfj0uCVqsL411gvkGRf2MMka','2002-10-09','M','Alejandra','Britez','1234567890',0,0,'97qxe9oksc3fr50'),(10,'manuvelasco7@gmail.com','$2b$10$WvWjFOWpbLAWmkbjs.2DIOpYmVuMwCIzdbMv0ovtPed//1foZK4dO','1999-04-08','M','manuel','velasco','3413136856',0,0,'97qxhy8ksc47ann'),(12,'manu9994.mv@gmail.com','$2b$10$RJYwt1HLPGXFRcYfeNLgsOpUp4H0esWx.AHtzWzG4P.O8c5QJbJc6','1999-04-09','H','Manuel','Velasco','3413136856',1,1,'97qx514ksc9c2xt');
+INSERT INTO `user` VALUES (10,'user@gmail.com','$2b$10$WvWjFOWpbLAWmkbjs.2DIOpYmVuMwCIzdbMv0ovtPed//1foZK4dO','1999-04-08','M','manuel','velasco','1113136856',0,1,'97qxhy8ksc47ann'),(12,'admin@gmail.com','$2b$10$RJYwt1HLPGXFRcYfeNLgsOpUp4H0esWx.AHtzWzG4P.O8c5QJbJc6','1999-04-09','H','Admin','Admin','1113136857',1,1,'97qx514ksc9c2xt');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-18 18:29:07
+-- Dump completed on 2021-08-18 22:34:04

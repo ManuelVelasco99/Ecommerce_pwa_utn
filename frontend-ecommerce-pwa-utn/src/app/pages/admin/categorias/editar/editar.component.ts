@@ -32,9 +32,9 @@ export class EditarComponent implements OnInit {
   ngOnInit(): void {
     this.id_cat = this.route.snapshot.queryParamMap.get('id');
     
-    console.log(this.id_cat)
+    //console.log(this.id_cat)
     this.adminService.getCategory(this.id_cat).subscribe((databackend:any)=>{
-      console.log(databackend)
+      //console.log(databackend)
       this.nombre = databackend.category.nombre;
       this.formCategory.controls.nombre.setValue(this.nombre)
     })
@@ -47,7 +47,7 @@ export class EditarComponent implements OnInit {
     if(this.formCategory.valid){
 
       this.adminService.editCategory(this.formCategory.value).subscribe((databackend:any)=>{
-        console.log(databackend);
+        //console.log(databackend);
       })
       this.irCategorias();
     }

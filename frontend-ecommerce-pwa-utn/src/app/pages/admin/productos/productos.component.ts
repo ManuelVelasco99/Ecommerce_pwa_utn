@@ -24,7 +24,7 @@ export class ProductosComponent implements OnInit {
     this.productService.getProducts().subscribe((databackend:any)=>{
       const prodA : Array<any> = databackend.productos;
       this.dataSource.data= prodA  as any[];
-      console.log(this.dataSource,prodA);
+      //console.log(this.dataSource,prodA);
     })
 
   }
@@ -38,7 +38,7 @@ export class ProductosComponent implements OnInit {
   }
 
   openDialogDelete(id : string,i:number){
-    console.log(i,'esi')
+    //console.log(i,'esi')
       let deleteCategory : boolean ;
     let dialogRef = this.matDialog.open(DialogprodComponent,{});
     dialogRef.afterClosed().subscribe((result:any)=>{
@@ -52,7 +52,7 @@ export class ProductosComponent implements OnInit {
 
   deleteProduct(id:string,i:number){
     this.adminService.deleteProduct(id).subscribe((databackend:any)=>{
-      console.log(databackend.estado,databackend.estado === 'success')
+      //console.log(databackend.estado,databackend.estado === 'success')
       if(databackend.estado === 'success'){      
         this.dataSource.data.splice(i,1);
         this.dataSource._updateChangeSubscription();

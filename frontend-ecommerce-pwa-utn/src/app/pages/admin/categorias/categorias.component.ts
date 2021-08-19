@@ -26,7 +26,7 @@ export class CategoriasComponent implements OnInit {
     this.categoriesService.getCategories().subscribe((databackend:any)=>{
       const catA : Array<any> = databackend.categorias;
       this.dataSource.data= catA  as any[];
-      console.log(this.dataSource,catA);
+      //console.log(this.dataSource,catA);
     })
   }
 
@@ -36,7 +36,7 @@ export class CategoriasComponent implements OnInit {
   }
 
   delete(id:any){
-    console.log('borraste',id)
+   // console.log('borraste',id)
   }
 
   ELEMENT_DATA!: any[];
@@ -44,7 +44,7 @@ export class CategoriasComponent implements OnInit {
   displayedColumns: string[] = ['id','nombre','edit','delete'];
 
   openDialogDelete(id : string,i:number){
-  console.log(i,'esi')
+  //console.log(i,'esi')
     let deleteCategory : boolean ;
   let dialogRef = this.matDialog.open(DialogcatComponent,{});
   dialogRef.afterClosed().subscribe((result:any)=>{
@@ -61,7 +61,7 @@ irCreateCategoria(){
 
   deleteCategory(id:string,i:number){
       this.adminService.deleteCategory(id).subscribe((databackend:any)=>{
-        console.log(databackend.estado,databackend.estado === 'success')
+        //console.log(databackend.estado,databackend.estado === 'success')
         if(databackend.estado === 'success'){      
           this.dataSource.data.splice(i,1);
           this.dataSource._updateChangeSubscription();

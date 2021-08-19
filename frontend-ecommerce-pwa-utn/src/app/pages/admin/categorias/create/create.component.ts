@@ -25,9 +25,9 @@ export class CreateCategoriaComponent implements OnInit {
 
   crearCategoria(){
     if(this.formCategory.valid){
-      console.log(this.formCategory.value);
+      //console.log(this.formCategory.value);
       this.adminService.createCategory(this.formCategory.value).subscribe((databackend:any)=>{
-        console.log(databackend);
+        //console.log(databackend);
       })
       this.irCategorias();
     }

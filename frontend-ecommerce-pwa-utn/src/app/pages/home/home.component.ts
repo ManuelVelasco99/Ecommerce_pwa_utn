@@ -26,14 +26,14 @@ export class HomeComponent implements OnInit {
       categoriasA.forEach(element => {
         this.cate.push(element);     
       });
-      console.log(this.cate);
+      //console.log(this.cate);
     });
 
     
     if(this.categoryParam==''){
-      console.log('vino sin params');
+      //console.log('vino sin params');
       this.homeService.getProducts().subscribe((databackend:any)=>{
-        console.log(databackend);
+        //console.log(databackend);
         const prodA : Array<any> = databackend.productos;
         prodA.forEach(element => {
           this.prod.push({
@@ -43,13 +43,13 @@ export class HomeComponent implements OnInit {
             imagen:element.imagen
           })
         });
-        console.log(this.prod);
+        //console.log(this.prod);
       })  
     }
     else{
-      console.log('vino con params')
+     // console.log('vino con params')
       this.homeService.getProductsWithCategory(this.categoryParam).subscribe((databackend:any)=>{
-        console.log(databackend);
+        //console.log(databackend);
         const prodA : Array<any> = databackend.productos;
         prodA.forEach(element => {
           this.prod.push({
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
             imagen:element.imagen
           })
         });
-        console.log(this.prod);
+        //console.log(this.prod);
       })
     }
      
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
     if(localStorage.getItem('carrito') == null){
       let carrito = [id];
       localStorage.setItem('carrito',JSON.stringify(carrito));
-      console.log(carrito);
+      //console.log(carrito);
     }
     else{
       let carrito : Array<any> = JSON.parse(localStorage.getItem('carrito')||'');

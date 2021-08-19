@@ -31,7 +31,7 @@ CREATE TABLE `category` (
   `eliminado` tinyint NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_category`),
   UNIQUE KEY `nombre_UNIQUE` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'informáticaa',1,0),(2,'futbol',1,1),(3,'Cienciass',1,1),(11,'Falopinhaa',1,1),(12,'Juegos',1,0),(13,'Audio',1,0),(14,'Baño',1,0),(15,'Escabio',1,0),(16,'Electrodomesticos',1,0);
+INSERT INTO `category` VALUES (17,'Informática',1,0),(18,'Audio',1,0),(19,'Electrodomésticos',1,0),(20,'Cocina',1,0),(21,'Muebles',1,0);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-18 18:29:07
+-- Dump completed on 2021-08-18 22:34:03

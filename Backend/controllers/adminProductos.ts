@@ -66,7 +66,7 @@ export={
         
         await query("start transaction");
         const insertProduct:any = await query('INSERT INTO PRODUCT SET ?',[productCreate])
-        console.log(insertProduct);
+        //console.log(insertProduct);
         const precio ={ 
             id_product:insertProduct.insertId,
             price:precioProducto
@@ -88,7 +88,7 @@ export={
 
     getProductImage:(req:any, res:Response) =>{//devuelve la imagen con el nombre ingresado en ?image='nombreImagen'      
         const imgUrl =  filesystem.getImageUrl(req.query.image);
-        console.log(imgUrl);
+        //console.log(imgUrl);
         res.sendFile(imgUrl);
     },
 
@@ -128,7 +128,7 @@ export={
             }
 
             if(req.body.price == null){
-                console.log('precio undefined')
+                //console.log('precio undefined')
                 const update = await query('UPDATE PRODUCT SET ? WHERE id_product=?',[prod,id_product]);
                 res.json({
                     estado:'success',
@@ -139,7 +139,7 @@ export={
             }
             
                 await query("start transaction");
-                console.log(prod);
+                //console.log(prod);
                 const update = await query('UPDATE PRODUCT SET ? WHERE id_product=?',[prod,id_product]);
                 const precio ={ 
                     id_product:id_product,

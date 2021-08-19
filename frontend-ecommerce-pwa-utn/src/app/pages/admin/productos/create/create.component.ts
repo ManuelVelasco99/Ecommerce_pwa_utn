@@ -26,7 +26,7 @@ export class CreateProductosComponent implements OnInit {
   ngOnInit(): void {
     this.homeService.getCategories().subscribe((databackend:any)=>{
       this.categories = databackend.categorias;
-      console.log(this.categories)
+      //console.log(this.categories)
     });
     
 
@@ -85,7 +85,7 @@ export class CreateProductosComponent implements OnInit {
     const validacion = this.validarFile(event);
 
     if(validacion){
-      console.log('piola la pic');
+      //console.log('piola la pic');
       this.textButton=this.filename;
       this.inputFile = true;
 
